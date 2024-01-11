@@ -3,9 +3,9 @@
         <div class ="navbar-header">
             <a hred="#" class="navbar-brand">Recipe Book</a>
         </div>
-        <app-navigation-bar></app-navigation-bar>
+        <app-navigation-bar (featureSelected)="onNavigate($event)"></app-navigation-bar>
     </div>
 </nav>
 
-<app-recipes></app-recipes>
-<app-shopping-list></app-shopping-list>
+<app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+<app-shopping-list  *ngIf="loadedFeature === 'shopping-list'"></app-shopping-list>

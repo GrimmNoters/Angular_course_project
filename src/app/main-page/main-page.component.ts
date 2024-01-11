@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
+  loadedFeature = 'recipe';
+
+  onNavigate(feature:string){
+    this.loadedFeature=feature
+  }
+
 
 }
