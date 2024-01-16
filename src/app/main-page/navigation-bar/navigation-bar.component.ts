@@ -6,9 +6,4 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './navigation-bar.component.css'
 })
 export class NavigationBarComponent {
-  @Output() featureSelected = new EventEmitter<string>();
-
-  onSelect(feature:string) {
-    this.featureSelected.emit(feature);
-  }
 }

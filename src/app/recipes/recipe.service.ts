@@ -30,13 +30,22 @@ export class RecipeService {
         new Ingredient('Flour', 1),
       ])
   ];
-  constructor(private slService:shoppinglistService) { }
+  constructor(private slService: shoppinglistService) { }
 
   getRecipes() {
     return this.recipes.slice();
   }
 
+  getRecipesById(id: number) {
+    return this.recipes.slice()[id]
+  }
+
   addToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients)
+  }
+
+  updateRecipe(id: number, updatedRecipe: Recipe) {
+    this.recipes[id] = updatedRecipe
+
   }
 }
