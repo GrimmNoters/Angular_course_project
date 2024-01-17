@@ -9,14 +9,20 @@ import { shoppinglistService } from '../shopping-list.service';
 })
 export class ShoppingListEditComponent implements OnInit {
 
-  constructor(private shoppinglistService:shoppinglistService){}
+  constructor(private shoppinglistService: shoppinglistService) { }
 
   onAddIngredient(nameInput, amountInput) {
-    const newIngredient = new Ingredient(nameInput.value, amountInput.value)
-    this.shoppinglistService.createNewItem(newIngredient)
+    if (nameInput.value && amountInput.value) {
+      const newIngredient = new Ingredient(nameInput.value, amountInput.value)
+
+      this.shoppinglistService.createNewItem(newIngredient)
+    }
+    else{
+      alert("Please fill in the blanks!")
+    }
 
   }
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
 
 
